@@ -136,19 +136,6 @@ sudo systemctl start mongod
 ```
 
 
-## 🧪 Testing
-
-### Backend Testing
-```bash
-cd backend
-npm test
-```
-
-### Frontend Testing
-```bash
-cd frontend
-npm test
-```
 
 ## Performance Optimizations
 
