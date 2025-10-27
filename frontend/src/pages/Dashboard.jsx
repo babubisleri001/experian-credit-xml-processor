@@ -39,12 +39,11 @@ import {
 } from '@mui/icons-material';
 import { getAllReports, deleteReport } from '../services/api';
 import { toast } from 'react-toastify';
-
 const Dashboard = () => {
+  
   const [searchTerm, setSearchTerm] = useState('');
   const [deleteDialog, setDeleteDialog] = useState({ open: false, report: null });
   const queryClient = useQueryClient();
-  
   const { data: reports, isLoading, error, refetch } = useQuery({ 
     queryKey: ['reports'], 
     queryFn: getAllReports 
@@ -168,6 +167,8 @@ const Dashboard = () => {
             </CardContent>
           </Card>
         </Grid>
+  
+
         
         <Grid item xs={12} sm={6} md={3}>
           <Card sx={{ height: '100%' }}>

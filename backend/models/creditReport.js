@@ -11,18 +11,20 @@ const creditAccountSchema = new mongoose.Schema({
 }, { _id: false });
 
 const creditReportSchema = new mongoose.Schema({
-  name: { type: String, required: true },          
-  mobilePhone: String,                             // Mobile Phone
-  pan: String,                                     // PAN
-  creditScore: Number,                             // Credit Score
+  name: { type: String, required: true,
+    
+   },          
+  mobilePhone: String,                            
+  pan: String,                                    
+  creditScore: Number,                            
   
-  totalAccounts: Number,                           // Total number of accounts
-  activeAccounts: Number,                          // Active accounts
-  closedAccounts: Number,                          // Closed accounts
-  currentBalanceAmount: Number,                    // Current balance amount
-  securedAccountsAmount: Number,                   // Secured accounts amount
-  unsecuredAccountsAmount: Number,                 // Unsecured accounts amount
-  last7DaysEnquiries: Number,                      // Last 7 days credit enquiries
+  totalAccounts: Number,                          
+  activeAccounts: Number,                         
+  closedAccounts: Number,                          
+  currentBalanceAmount: Number,                   
+  securedAccountsAmount: Number,            
+  unsecuredAccountsAmount: Number,            
+  last7DaysEnquiries: Number,                    
   
   creditAccounts: [creditAccountSchema],          
   

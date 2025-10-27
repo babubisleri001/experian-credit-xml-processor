@@ -8,6 +8,12 @@ const api = axios.create({
     'Content-Type': 'application/json',
   },
 });
+// Example React Query fetcher
+export const fetchOverview = async () => {
+  const response = await axios.get(`${VITE_API_URL}/reports/stats/overview`);
+  return response.data; // now includes { stats, insight }
+};
+
 
 export const uploadReport = async (file) => {
   const formData = new FormData();

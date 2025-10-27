@@ -5,9 +5,12 @@ const connectDB = require('./config/db');
 
 const app = express();
 connectDB();
+app.use(express.json());
+app.use(express.urlencoded({ extended: true }));
 
 const allowedDevOrigins = ['http://localhost:5173', 'http://localhost:5174'];
-const frontendOrigin = process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : null;
+const frontendOrigin = process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*';
+
 
 app.use(cors({
   origin: (origin, callback) => {
@@ -23,16 +26,15 @@ app.use(cors({
   },
   credentials: true,
 }));
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
+
 
 let reportRoutes;
 try {
   reportRoutes = require('./routes/reports');
   app.use('/api/reports', reportRoutes);
-  console.log('✅ Reports routes loaded');
+  console.log(' Reports routes loaded');
 } catch (error) {
-  console.error('❌ Error loading routes:', error.message);
+  console.error(' Error loading routes:', error.message);
 }
 
 app.get('/health', (req, res) => {

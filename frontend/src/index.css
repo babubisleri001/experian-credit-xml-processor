@@ -79,3 +79,11 @@ button:focus-visible {
     background-color: #f9f9f9;
   }
 }
+
+
+html, body, #root {
+  margin: 0;
+  padding: 0;
+  background-color: #0f1419;
+  min-height: 100vh;
+}
