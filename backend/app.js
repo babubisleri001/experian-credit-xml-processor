@@ -8,16 +8,18 @@ connectDB();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-const allowedDevOrigins = ['http://localhost:5173', 'http://localhost:5174'];
+const allowedDevOrigins = [process.env.FRONTEND_URL, 'http://localhost:5173', 'http://localhost:5174'];
 const frontendOrigin = process.env.NODE_ENV === 'production' ? process.env.FRONTEND_URL : '*';
-
 
 app.use(cors({
   origin: (origin, callback) => {
     if (!origin) return callback(null, true);
 
-    const allowed = frontendOrigin ? [frontendOrigin, ...allowedDevOrigins] : allowedDevOrigins;
-    if (allowed.includes(origin)) {
+    const allowed = frontendOrigin && process.env.NODE_ENV === 'production' 
+      ? [frontendOrigin, ...allowedDevOrigins] 
+      : allowedDevOrigins;
+    
+    if (allowed.includes(origin) || (process.env.NODE_ENV !== 'production' && frontendOrigin === '*')) {
       return callback(null, true);
     }
 
