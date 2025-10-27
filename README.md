@@ -2,7 +2,7 @@
 
 A comprehensive web application for processing and managing Experian credit report XML files. This application provides a complete solution for uploading, parsing, storing, and visualizing credit report data with a modern, responsive user interface.
 
-## 🚀 Features
+##  Features
 
 ### Backend Features
 - **XML File Upload**: RESTful API endpoint for secure XML file uploads
@@ -25,7 +25,7 @@ A comprehensive web application for processing and managing Experian credit repo
 - **Report Summary**: Total accounts, Active accounts, Closed accounts, Current balance, Secured/Unsecured amounts, Recent enquiries
 - **Credit Accounts**: Credit cards, Bank names, Account numbers, Current balance, Amount overdue
 
-## 🛠️ Tech Stack
+##  Tech Stack
 
 ### Backend
 - **Node.js** - Runtime environment
@@ -43,7 +43,7 @@ A comprehensive web application for processing and managing Experian credit repo
 - **Axios** - HTTP client
 - **React Toastify** - Notifications
 
-## 📋 Prerequisites
+## Prerequisites
 
 Before running this application, make sure you have the following installed:
 
@@ -51,7 +51,7 @@ Before running this application, make sure you have the following installed:
 - **MongoDB** (v4.4 or higher)
 - **npm** or **yarn**
 
-## 🚀 Installation & Setup
+## Installation & Setup
 
 ### 1. Clone the Repository
 ```bash
@@ -95,7 +95,7 @@ net start MongoDB
 sudo systemctl start mongod
 ```
 
-## 🏃‍♂️ Running the Application
+## Running the Application
 
 ### Development Mode
 
@@ -113,69 +113,9 @@ npm run dev
 ```
 The frontend will run on `http://localhost:5173`
 
-### Production Mode
 
-1. **Build the Frontend**
-```bash
-cd frontend
-npm run build
-```
 
-2. **Start the Backend in Production**
-```bash
-cd backend
-npm start
-```
-
-## 📁 Project Structure
-
-```
-experian-credit-xml-processor/
-├── backend/
-│   ├── controllers/
-│   │   └── reportController.js
-│   ├── models/
-│   │   └── Report.js
-│   ├── routes/
-│   │   └── reports.js
-│   ├── config/
-│   │   └── db.js
-│   ├── middleware/
-│   ├── app.js
-│   └── server.js
-├── frontend/
-│   ├── src/
-│   │   ├── components/
-│   │   │   └── Layout.jsx
-│   │   ├── pages/
-│   │   │   ├── Dashboard.jsx
-│   │   │   ├── Upload.jsx
-│   │   │   ├── ReportDetail.jsx
-│   │   │   └── Analytics.jsx
-│   │   ├── services/
-│   │   │   └── api.js
-│   │   ├── App.jsx
-│   │   └── main.jsx
-│   ├── public/
-│   └── package.json
-└── README.md
-```
-
-## 🔧 API Endpoints
-
-### Reports
-- `POST /api/reports/upload` - Upload XML file
-- `GET /api/reports` - Get all reports
-- `GET /api/reports/:id` - Get report by ID
-- `GET /api/reports/search/pan/:pan` - Search by PAN
-- `GET /api/reports/search/phone/:phone` - Search by phone
-- `GET /api/reports/stats/overview` - Get statistics
-- `DELETE /api/reports/:id` - Delete report
-
-### Health Check
-- `GET /health` - Server health status
-
-## 📊 Database Schema
+## Database Schema
 
 ### Report Model
 ```javascript
@@ -207,74 +147,9 @@ experian-credit-xml-processor/
 }
 ```
 
-## 🎨 UI Components
 
-### Dashboard
-- Statistics cards showing key metrics
-- Searchable table of all reports
-- Quick actions (view, delete)
 
-### Upload Page
-- Drag & drop file upload
-- Progress indicators
-- File validation and guidelines
-
-### Report Detail
-- Comprehensive report information
-- Credit score visualization
-- Account details with risk indicators
-
-### Analytics
-- Credit score distribution charts
-- Risk analysis
-- Top banks by account count
-- Key insights and trends
-
-## 🔒 Security Features
-
-- File type validation (XML only)
-- File size limits (5MB max)
-- CORS configuration
-- Input sanitization
-- Error handling without sensitive data exposure
-
-## 🧪 Testing
-
-### Backend Testing
-```bash
-cd backend
-npm test
-```
-
-### Frontend Testing
-```bash
-cd frontend
-npm test
-```
-
-## 📈 Performance Optimizations
-
-- React Query for efficient data caching
-- Lazy loading of components
-- Optimized re-renders with useMemo
-- Responsive image handling
-- Efficient database queries
-
-## 🚀 Deployment
-
-### Using Docker
-```bash
-# Build and run with Docker Compose
-docker-compose up --build
-```
-
-### Manual Deployment
-1. Build the frontend: `npm run build`
-2. Set production environment variables
-3. Start the backend server
-4. Serve the frontend build files
-
-## 🤝 Contributing
+##  Contributing
 
 1. Fork the repository
 2. Create a feature branch: `git checkout -b feature-name`
